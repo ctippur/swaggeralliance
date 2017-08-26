@@ -1,4 +1,4 @@
-# swaggeralliance
+# Swaggeralliance
 ## Purpose
 This effort aims at integrating code generated via swagger codegen with other api gateway providers like aws. 
 
@@ -22,6 +22,6 @@ Just jotting down some challenges. I am sure there are a lot more.
 1. After implementing business logic, how do we link with further changes to model or end point? This is relevant because swagger codegen recreates the stub.
 2. Integrting with other providers like Azure, Google Cloud Platform
 3. Build A/B testing environment (For example use Wasabi)
-4. 
+
 
 
