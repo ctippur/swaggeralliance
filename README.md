@@ -11,8 +11,9 @@ Based on design first approach (read [link]: https://swaggerhub.com/blog/api-des
 1. Design the model and end points via Swagger
 2. Validate with the team
 3. Generate code stub via swagger codegen
-4. Iterate on business logic and swagger configuration and checkin your code
-5. Upload your code to the provider of choice (zappa for AWS, find similar ones for other providers?) test and promote to production.
+4. Run a script/use UI to specify the provider. This changes/adds code necessary for a specific provider
+5. Iterate on business logic and swagger configuration and checkin your code
+6. Upload your code to the provider of choice (zappa for AWS, find similar ones for other providers?) test and promote to production.
 
 Any further changes to the endpoint or model should be reflected on swagger and code stub should be generated.
 
