@@ -17,12 +17,13 @@ Based on design first approach (read [link]: https://swaggerhub.com/blog/api-des
 
 Any further changes to the endpoint or model should be reflected on swagger and code stub should be generated.
 
-## Challenges
+## Challenges/opportunities 
 Just jotting down some challenges. I am sure there are a lot more.
 
 1. After implementing business logic, how do we link with further changes to model or end point? This is relevant because swagger codegen recreates the stub.
-2. Integrting with other providers like Azure, Google Cloud Platform
+2. Integrting with other providers like Azure, Google Cloud Platform. etc
 3. Build A/B testing environment (For example use Wasabi)
+4. Improve code gen to conform to specific use cases (for example, use cases for machine learning, build with pickle and other required libraries)
 
 
 
