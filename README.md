@@ -3,7 +3,7 @@
 This effort aims at integrating code generated via swagger codegen with other api gateway providers like aws. 
 
 ### Advantages:
-Ideally, this should significantly cut down the time it takes to develop API's and deploy it. The idea here is to leverage existing tools available to glue things together. As a first phase, we are looking at integrating swagger 
+Ideally, this should significantly cut down the time it takes to develop API's and deploy it. The idea here is to leverage existing tools available to glue things together. As a first phase, we are looking at integrating swagger with AWS API gateway. 
 
 ## Flow
 Based on design first approach (read [link]: https://swaggerhub.com/blog/api-design/design-first-or-code-first-api-development/ for use cases that support design first approach), an ideal flow would be to:
@@ -24,6 +24,7 @@ Just jotting down some challenges. I am sure there are a lot more.
 2. Integrating with other providers like Azure, Google Cloud Platform. etc
 3. Build A/B testing environment (For example use Wasabi)
 4. Improve code gen to conform to specific use cases (for example, use cases for machine learning, build with pickle and other required libraries)
+5. Abstracting other parameters in a ui or a command line so that we can truely make the experience agnostic to the provider.
 
 
 
