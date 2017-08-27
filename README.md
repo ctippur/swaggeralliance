@@ -77,6 +77,11 @@ my zappa_settings.json looks like this:
 
 }
 `
+15. zappa deploy
+
+You should now be able to test 
+
+curl https://`<aws endpoint>/v2/pet/findByStatus
 
 
 
