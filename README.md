@@ -43,7 +43,9 @@ Just jotting down some challenges. I am sure there are a lot more.
 13. add the below lines to swagger_server/encoder.py
 `
 import sys
+
 import os
+
 sys.path.append(os.getcwd())
 `
 You should be able to start the server as python swagger_server/app.py
