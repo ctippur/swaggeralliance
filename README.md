@@ -27,4 +27,56 @@ Just jotting down some challenges. I am sure there are a lot more.
 5. Abstracting other parameters in a ui or a command line so that we can truely make the experience agnostic to the provider.
 
 
+## Steps for hello world
+1. Go to http://editor.swagger.io/?_ga=2.191872618.1371276200.1503798690-1387572370.1503798690#/
+2. click on generage clinet and chose python-flask - this will download a zip file containing the code for the api to work
+3. On your local laptop
+4. python3 -m venv test
+5. source test/bin/activate
+6. cd test
+7. cp `<file from step 2>` .
+8. unzip the file
+9. pip install zappa
+10. cd python_flask_server && pip install -r requirements.txt 
+11. You should now be able to run python -m swagger_server
+12. copy the contents of ap.py (in this git repo) to swagger_server folder
+13. add the below lines to swagger_server/encoder.py
+`
+import sys
+import os
+sys.path.append(os.getcwd())
+`
+You should be able to start the server as python swagger_server/app.py
+
+You are now ready for zappa
+
+14. zappa init
+`
+my zappa_settings.json looks like this:
+{
+
+    "dev": {
+
+        "app_function": "swagger_server.app.app",
+
+        "aws_region": "us-west-1",
+
+        "profile_name": "test",
+
+        "project_name": "petstore-test",
+
+        "binary_support": true,
+
+        "debug": true,
+
+        "keep_warm": false,
+
+        "s3_bucket": "redacted"
+
+    }
+
+}
+`
+
+
 
