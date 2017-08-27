@@ -77,11 +77,12 @@ my zappa_settings.json looks like this:
 
 }
 `
+
 15. zappa deploy
 
 You should now be able to test 
 
-curl https://`<aws endpoint>/v2/pet/findByStatus
+curl -X GET "http://`<aws end point>/v2/pet/findByStatus?status=available" -H "accept: application/xml"
 
 
 
