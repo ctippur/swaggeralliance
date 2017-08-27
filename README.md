@@ -82,7 +82,7 @@ my zappa_settings.json looks like this:
 
 You should now be able to test 
 
-curl -X GET "http://`<aws end point>`/v2/pet/findByStatus?status=available" -H "accept: application/xml"
+curl -X GET "http://`<aws end point>`/v2/pet/findByStatus?status=available" -H "accept: application/json"
 
 
 
