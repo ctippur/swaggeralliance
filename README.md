@@ -21,13 +21,16 @@ Any further changes to the endpoint or model should be reflected on swagger and 
 Just jotting down some challenges. I am sure there are a lot more.
 
 1. After implementing business logic, how do we link with further changes to model or end point? This is relevant because swagger codegen recreates the stub.
-2. Integrating with other providers like Azure, Google Cloud Platform. etc
-3. Build A/B testing environment (For example use Wasabi)
-4. Improve code gen to conform to specific use cases (for example, use cases for machine learning, build with pickle and other required libraries, or provide necessary dependencies for mobile application)
-5. Abstracting other parameters in a ui or a command line so that we can truely make the experience agnostic to the provider.
+2. Build A/B testing environment (For example use Wasabi)
+3. Improve code gen to conform to specific use cases. Some things I can think of: 
+   * Machine learning with pickle and otehr required libraries
+   * Database connectivity (rds/otherwise)
+   * Things needed for mobile/IOT applications
+4. Abstracting other parameters in a ui or a command line so that we can truely make the experience agnostic to the provider.
+5. Integrating with other providers like Azure, Google Cloud Platform. etc
 
 
-## Steps for hello world
+## Steps for igenerating python-flask hello world
 1. Go to http://editor.swagger.io/?_ga=2.191872618.1371276200.1503798690-1387572370.1503798690#/
 2. click on generage clinet and chose python-flask - this will download a zip file containing the code for the api to work
 3. On your local laptop
