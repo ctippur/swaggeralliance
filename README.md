@@ -1,6 +1,11 @@
 # Swaggeralliance
 ## Purpose
 This effort aims at integrating code generated via swagger codegen with other api gateway providers like AWS. 
+Design principles:
+   1. Keep it code agnostic - This means that we need to be able to use this methodology to accomodate different programming languages
+   2. Cloud provider agnostic - We should be able to leverage different cloud offerings, like AWS, Google Cloud Platform
+   3. Design first approach - Foster design first approach for api development.
+
 
 ### Advantages:
 Ideally, this should significantly cut down the time it takes to develop API's and deploy it. The idea here is to leverage existing tools available to glue things together. As a first phase, we are looking at integrating swagger with AWS API gateway. 
