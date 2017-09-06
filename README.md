@@ -35,7 +35,7 @@ Just jotting down some challenges. I am sure there are a lot more.
 5. Integrating with other providers like Azure, Google Cloud Platform. etc
 
 
-## Steps for igenerating python-flask hello world
+## Steps for generating python-flask hello world
 1. Go to http://editor.swagger.io/?_ga=2.191872618.1371276200.1503798690-1387572370.1503798690#/
 2. click on generage clinet and chose python-flask - this will download a zip file containing the code for the api to work
 3. On your local laptop
