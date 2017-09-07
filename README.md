@@ -49,13 +49,13 @@ Just jotting down some challenges. I am sure there are a lot more.
 11. You should now be able to run python -m swagger_server
 12. copy the contents of ap.py (in this git repo) to swagger_server folder
 13. add the below lines to swagger_server/encoder.py
-`
+```
 import sys
 
 import os
 
 sys.path.append(os.getcwd())
-`
+```
 You should be able to start the server as python swagger_server/app.py
 
 You are now ready for zappa
