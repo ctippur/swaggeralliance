@@ -61,9 +61,11 @@ You should be able to start the server as python swagger_server/app.py
 You are now ready for zappa
 
 14. zappa init
+
 my zappa_settings.json looks like this:
 
-`{
+```
+{
 
     "dev": {
 
@@ -85,7 +87,8 @@ my zappa_settings.json looks like this:
 
     }
 
-}`
+}
+```
 
 15. zappa deploy
 
