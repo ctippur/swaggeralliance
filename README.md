@@ -11,7 +11,7 @@ Design principles:
 Ideally, this should significantly cut down the time it takes to develop API's and deploy it. The idea here is to leverage existing tools available to glue things together. As a first phase, we are looking at integrating swagger with AWS API gateway. 
 
 ## Flow
-Based on design first approach (read [link]: https://swaggerhub.com/blog/api-design/design-first-or-code-first-api-development/ for use cases that support design first approach), an ideal flow would be to:
+Based on design first approach (read [link](https://swaggerhub.com/blog/api-design/design-first-or-code-first-api-development/) for use cases that support design first approach), an ideal flow would be to:
 
 1. Design the model and end points via Swagger
 2. Validate with the team
@@ -36,7 +36,7 @@ Just jotting down some challenges. I am sure there are a lot more.
 
 
 ## Steps for generating python-flask hello world
-1. Go to http://editor.swagger.io/?_ga=2.191872618.1371276200.1503798690-1387572370.1503798690#/
+1. Go to [editor](http://editor.swagger.io/?_ga=2.191872618.1371276200.1503798690-1387572370.1503798690#/)
 2. click on generage clinet and chose python-flask - this will download a zip file containing the code for the api to work
 3. On your local laptop
 4. python3 -m venv test
