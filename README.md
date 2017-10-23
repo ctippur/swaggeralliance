@@ -26,44 +26,29 @@
 4. cd ```<project root>```; sh create_target.sh
 You should be able to start the server as python swagger_server/app.py
 You are now ready for zappa
-```
-Binary=None
-```
-9. zappa init
-
+5. zappa init
 my zappa_settings.json looks like this:
 
 ```
 {
-
     "dev": {
-
         "app_function": "swagger_server.app.app",
-
         "aws_region": "us-west-1",
-
         "profile_name": "test",
-
         "project_name": "petstore-test",
-
         "binary_support": true,
-
         "debug": true,
-
         "keep_warm": false,
-
         "s3_bucket": "redacted"
-
     }
-
 }
 ```
 
-10. zappa deploy
+6. zappa deploy
 
 You should now be able to test 
 
 curl -X GET "http://`<aws end point>`/v2/pet/findByStatus?status=available" -H "accept: application/json"
 
-11. Local testing
+7. Local testing
 curl -k http://localhost:5000/current/users -d '{"PatientID": "abcd","user_name": "abcd","name": "abcd", "document": {"abc": "def"}}' -H "Content-Type: application/json"
