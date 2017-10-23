@@ -49,6 +49,3 @@ my zappa_settings.json looks like this:
 You should now be able to test 
 
 curl -X GET "http://`<aws end point>`/v2/pet/findByStatus?status=available" -H "accept: application/json"
-
-7. Local testing
-curl -k http://localhost:5000/current/users -d '{"PatientID": "abcd","user_name": "abcd","name": "abcd", "document": {"abc": "def"}}' -H "Content-Type: application/json"
