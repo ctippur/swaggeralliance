@@ -35,20 +35,16 @@ Just jotting down some challenges. I am sure there are a lot more.
 5. Integrating with other providers like Azure, Google Cloud Platform. etc
 
 ## Steps for generating python-flask hello world
-1. python3 -m venv target
-2. source target/bin/activate
-3. Generate initial code
+1. Generate initial code
 
   * Via CLI - On Macos
 ```
    * brew install swagger-codegen
       * For other platforms, refer to https://github.com/swagger-api/swagger-codegen for details
-   * cd target
-   * swagger-codegen generate -i ../swaggerglobal.yml -l python-flask -o src (Only first time)
+   * swagger-codegen generate -i swaggerglobal.yml -l python-flask -o src/python/flask (Only first time)
 ```
   * Via Java
 ```
-   * cd target
    * Follow instructions from https://github.com/swagger-api/swagger-codegen and generate code under src (Only first time)
 ```
   * Via UI
