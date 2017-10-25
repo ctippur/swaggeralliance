@@ -56,9 +56,16 @@ Just jotting down some challenges. I am sure there are a lot more.
    * unzip the file and move the contents of the unzipped contents to target folder
 ```
 4. cd ```<project root>```; sh create_target.sh
-You should be able to start the server as python swagger_server/app.py
 You are now ready for zappa
-5. zappa init
+5. You should now be able to start the server you just created
+```
+source target/bin/activate
+cd target
+python swagger_server/app.py
+```
+5. ready to start zappa
+cd ```<project root>```
+zappa init
 my zappa_settings.json looks like this:
 
 ```
