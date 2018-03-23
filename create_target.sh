@@ -1,26 +1,57 @@
+rm -rf stage temp 
 deactivate 2>/dev/null
-python3 -m venv target
 pwd=`pwd`
+src='src/python/flask/'
 rm -f ${pwd}/swagger_server.zip
+
+if [ ! -d "target" ]; then
+  python3 -m venv --without-pip target
+  source target/bin/activate
+  curl https://bootstrap.pypa.io/get-pip.py | python
+  deactivate
+fi
 source target/bin/activate
-cp src/python/flask/requirements.txt target
-rm -rf temp
+
+## 
+mkdir -p stage
+cp ${src}/requirements.txt stage 2>/dev/null
+
+# Generate new code under temp
 swagger-codegen generate -i swaggerglobal.yml -l python-flask -o temp
-for files in `ls temp/swagger_server/models/*.py|egrep -v "__init__|binary.py"`; do 
-  src=$files
-  dest=`echo $files|sed 's/temp/src/g'`
+mkdir -p ${src}/swagger_server/swagger
+cp temp/swagger_server/swagger/swagger.yaml ${src}/swagger_server/swagger/swagger.yaml
+cp temp/swagger_server/controllers/*_controller.py ${src}/swagger_server/controllers
+
+## Code to copy mopdel code if it does not exist
+for files in `ls temp/swagger_server/models/*.py|egrep -v "__init__|binary.py|config.py"`; do 
+  modelsrc=$files
+  dest="${src}/`basename $files`"
+  #dest=`echo $files|sed "s|temp|${src}|g"`
+  if [ ! -f $dest ]; then
+     cp $modelsrc $dest
+  fi
+done
+
+python curate.py ## Generates controller code under /tmp/stage
+
+cp /tmp/stage/*_controller.py ${src}/swagger_server/controllers
+## Code to copy controller code if it does not exist
+for files in `ls /tmp/stage/*.py|egrep -v "__init__"`; do
+  srccontroller=$files
+  #dest=`echo $files|sed 's/\/tmp\/stage/src\/swagger_server\/controllers/g'`
+  dest="${src}/`basename $files`"
+  #echo $dest
   if [ ! -f $dest ]; then
      cp $src $dest
   fi
-  cp temp/swagger_server/swagger/swagger.yaml src/python/flask/swagger_server/swagger/swagger.yaml
-  cp temp/swagger_server/controllers/default_controller.py src/python/flask/swagger_server/controllers
 done
-cp -r src/python/flask/swagger_server target
-python curate.py ## Generates controller code
-cp /tmp/stage/* target/swagger_server/controllers
-cd target
-pip install -r requirements.txt
-cd lib/python3.6/site-packages
-zip -r9 ${pwd}/swagger_server.zip *
+cp -r ${src}/swagger_server stage
+#cp /tmp/stage/* stage/swagger_server/controllers
+pip install -r ${pwd}/stage/requirements.txt
+cp -r target/lib/python3.6/site-packages/* stage
+cp ${src}/zappa_settings.json stage
+
+exit
+zip -r9 ${pwd}/swagger_server.zip * -x \*.pyc\*
 cd $pwd/target
-zip -g -r ${pwd}/swagger_server.zip swagger_server
+zip -g -r ${pwd}/swagger_server.zip swagger_server -x \*.pyc\*
